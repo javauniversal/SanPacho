@@ -13,7 +13,7 @@ import com.poocode.sanpacho.R;
 
 import java.util.ArrayList;
 
-public class FragmentCalendarView extends Fragment {
+public class FragmentCalendarView extends BaseVolleyFragment {
 
     private CalendarView calendar;
 

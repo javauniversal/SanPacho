@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.poocode.sanpacho.Activities.Settings;
 import com.poocode.sanpacho.Fragments.FragmentCalendarView;
+import com.poocode.sanpacho.Fragments.FragmentEmergencia;
 import com.poocode.sanpacho.Fragments.FragmentIndex;
 import com.poocode.sanpacho.R;
 
@@ -36,10 +37,7 @@ public class Accounts extends MaterialNavigationDrawer implements MaterialAccoun
         this.addSection(newSection("Consulta ruta de recorrido", R.drawable.ic_map_black_48dp, new FragmentIndex()));
         this.addSection(newSection("Ver donde esta el bunde", R.drawable.ic_surround_sound_black_48dp, new FragmentIndex()));
         this.addSection(newSection("Notícias", R.drawable.ic_forum_black_24dp, new FragmentIndex()));
-        this.addSection(newSection("Teléfono de servicios", R.drawable.ic_local_phone_black_24dp, new FragmentIndex()));
-
-        //this.addSection(newSection("Section 3",R.mipmap.ic_mic_white_24dp,new FragmentButton()).setSectionColor(Color.parseColor("#9c27b0")));
-        //this.addSection(newSection("Section",R.mipmap.ic_hotel_grey600_24dp,new FragmentButton()).setSectionColor(Color.parseColor("#03a9f4")));
+        this.addSection(newSection("Teléfono de servicios", R.drawable.ic_local_phone_black_24dp, new FragmentEmergencia()));
 
         // create bottom section
         this.addBottomSection(newSection("Cerrar", R.mipmap.ic_settings_black_24dp, new Intent(this, Settings.class)));

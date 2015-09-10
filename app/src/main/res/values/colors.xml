@@ -31,4 +31,6 @@
     <item name="green" type="color">#4499CC00</item>
     <item name="darkgreen" type="color">#FF669900</item>
 
+    <color name="grid_item_bg_pressed">#D8D8D8</color>
+
 </resources>

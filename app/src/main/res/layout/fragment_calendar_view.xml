@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="18dp"
-    android:background="@drawable/grey_radial"
-    android:gravity="center_vertical">
+    android:background="@color/grid_item_bg_pressed"
+    tools:context="com.poocode.sanpacho.Fragments.FragmentCalendarView">
 
     <CalendarView
         android:layout_width="match_parent"

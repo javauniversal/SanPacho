@@ -1,7 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="AppTheme" parent="AppTheme.Base">
-        <!-- Customize your theme here. -->
     </style>
 
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
@@ -9,16 +8,6 @@
         <item name="colorPrimaryDark">@color/color_1</item>
         <item name="colorAccent">#FFFFFF</item>
         <item name="android:windowBackground">@android:color/white</item>
-        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
-        <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
-    </style>
-
-    <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
-        <item name="android:fontFamily" tools:targetApi="jelly_bean">sans-serif-light</item>
-    </style>
-
-    <style name="RobotoButtonStyle" parent="android:Widget.Holo.Button">
-        <item name="android:fontFamily" tools:targetApi="jelly_bean">sans-serif-light</item>
     </style>
 
     <!-- Accounts -->
@@ -26,8 +15,6 @@
         <item name="colorPrimary">@color/color_1</item>
         <item name="colorPrimaryDark">@color/color_1</item>
         <item name="colorAccent">#FFFFFF</item>
-        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
-        <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
     </style>
 
 
@@ -53,8 +40,6 @@
         <item name="colorPrimaryDark">@color/color_1</item>
         <item name="colorAccent">#FFFFFF</item>
         <item name="drawerType">@integer/DRAWERTYPE_ACCOUNTS</item>
-        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
-        <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
     </style>
 
     <style name="MaterialNavigationDrawerTheme.Light.DarkActionBar2" parent="Theme.AppCompat.Light.NoActionBar">
