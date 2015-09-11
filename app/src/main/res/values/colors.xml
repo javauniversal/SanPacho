@@ -33,4 +33,6 @@
 
     <color name="grid_item_bg_pressed">#D8D8D8</color>
 
+    <color name="color_negro">#000</color>
+
 </resources>

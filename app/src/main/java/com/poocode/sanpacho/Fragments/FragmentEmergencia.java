@@ -1,11 +1,14 @@
 package com.poocode.sanpacho.Fragments;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.volley.Request;
@@ -77,9 +80,18 @@ public class FragmentEmergencia extends BaseVolleyFragment {
     private boolean parseJSON(String json) {
         try {
             Gson gson = new Gson();
-            ListContactoE contactoE = gson.fromJson(json, ListContactoE.class);
+            final ListContactoE contactoE = gson.fromJson(json, ListContactoE.class);
             AppAdapter adapter = new AppAdapter(getActivity(), contactoE);
             multiColumnList.setAdapter(adapter);
+            multiColumnList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                    Intent callIntent = new Intent(Intent.ACTION_CALL);
+                    String number = "tel:" + contactoE.get(position).getCelular();
+                    callIntent.setData(Uri.parse(number));
+                    startActivity(callIntent);
+                }
+            });
             return true;
         }catch (IllegalStateException ex) {
             ex.printStackTrace();

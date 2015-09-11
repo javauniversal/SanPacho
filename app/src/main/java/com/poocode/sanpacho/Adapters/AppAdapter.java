@@ -60,6 +60,7 @@ public class AppAdapter extends BaseAdapter {
         ViewHolder holder = (ViewHolder) convertView.getTag();
         ContactoE item = getItem(position);
         holder.tv_name.setText(item.getNombre());
+        holder.tv_descripcion.setText(item.getDireccion());
         holder.tv_numero.setText(item.getTelefono());
 
         CargarImagen(holder, item);
@@ -96,11 +97,13 @@ public class AppAdapter extends BaseAdapter {
         ImageView iv_icon;
         TextView tv_name;
         TextView tv_numero;
+        TextView tv_descripcion;
 
         public ViewHolder(View view) {
             iv_icon = (ImageView) view.findViewById(R.id.iv_icon);
             tv_name = (TextView) view.findViewById(R.id.tv_name);
             tv_numero = (TextView) view.findViewById(R.id.tv_numero);
+            tv_descripcion = (TextView) view.findViewById(R.id.tv_descripcion);
             view.setTag(this);
         }
     }

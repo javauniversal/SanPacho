@@ -8,6 +8,7 @@
         android:id="@+id/iv_icon"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_margin="9dp"
         android:src="@mipmap/ic_launcher" />
 
     <LinearLayout
@@ -23,6 +24,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Policia Nacional"
+            android:textColor="#000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_descripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telefono: 3055456"
             android:textColor="#000"
             android:textSize="12sp" />
 
