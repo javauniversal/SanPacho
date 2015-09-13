@@ -1,30 +1,29 @@
 package com.poocode.sanpacho.Adapters;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
-import com.poocode.sanpacho.Activities.ActDescLugar;
+import com.poocode.sanpacho.Entities.ListGaleria;
 import com.poocode.sanpacho.Entities.ListLugares;
 import com.poocode.sanpacho.R;
-import static com.poocode.sanpacho.Entities.Lugares.setStaticLigat;
 
-public class CostomAdapterLugar extends BucketListAdapterLugares {
+public class CostomAdapterGaleria extends BucketListAdapterGaleria {
 
     private Activity mActivity;
-    private ListLugares elements;
+    private ListGaleria elements;
     private DisplayImageOptions options1;
     private ImageLoader imageLoader1;
 
-    public CostomAdapterLugar(Activity ctx, ListLugares elements) {
+    public CostomAdapterGaleria(Activity ctx, ListGaleria elements) {
         super(ctx, elements);
         this.mActivity=ctx;
         this.elements = elements;
@@ -43,14 +42,12 @@ public class CostomAdapterLugar extends BucketListAdapterLugares {
 
     @Override
     protected View getBucketElement(final int position) {
-        final ViewHolder holder;
+        final ViewHolder2 holder;
         View bucketElement;
         LayoutInflater inflater = mActivity.getLayoutInflater();
-        bucketElement = inflater.inflate(R.layout.binder_data_1, null);
-        holder = new ViewHolder(bucketElement);
+        bucketElement = inflater.inflate(R.layout.binder_galeria, null);
+        holder = new ViewHolder2(bucketElement);
         bucketElement.setTag(holder);
-
-        //Llenado static product
 
         ImageLoadingListener listener = new ImageLoadingListener(){
             @Override
@@ -72,29 +69,16 @@ public class CostomAdapterLugar extends BucketListAdapterLugares {
             }
         };
 
-        imageLoader1.displayImage(elements.get(position).getFoto(), holder.img, options1, listener);
-
-        holder.name.setText(elements.get(position).getNombre());
-
-        bucketElement.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(mActivity,elements.get(position).getNombre(),Toast.LENGTH_LONG).show();
-                setStaticLigat(elements.get(position));
-                mActivity.startActivity(new Intent(mActivity, ActDescLugar.class));
-                mActivity.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-            }
-        });
+        imageLoader1.displayImage(elements.get(position).getImagen(), holder.img, options1, listener);
 
         return bucketElement;
     }
 
-    class ViewHolder {
+    class ViewHolder2 {
         public TextView name = null;
         public ImageView img = null;
 
-        ViewHolder(View row) {
-            name = (TextView) row.findViewById(R.id.nombreLugar);
+        ViewHolder2(View row) {
             img = (ImageView) row.findViewById(R.id.iconImagen);
         }
         void populateFrom(String s) {

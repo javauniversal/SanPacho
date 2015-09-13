@@ -4,7 +4,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
@@ -12,5 +12,8 @@
     <string name="title_activity_act_des_hot_res">San Pacho</string>
 
     <string name="Descripcion">Nombre:</string>
+    <string name="title_activity_act_desc_lugar">Descripción</string>
+    <string name="title_activity_maps_recorrido">Map</string>
+    <string name="title_activity_act_kml_web_view">ActKmlWebView</string>
 
 </resources>

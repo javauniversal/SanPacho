@@ -3,12 +3,16 @@ package com.poocode.sanpacho.dark;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.poocode.sanpacho.ActKmlWebView;
 import com.poocode.sanpacho.Activities.Settings;
+import com.poocode.sanpacho.Fragments.FragmentBundeVivo;
 import com.poocode.sanpacho.Fragments.FragmentCalendarView;
 import com.poocode.sanpacho.Fragments.FragmentEmergencia;
+import com.poocode.sanpacho.Fragments.FragmentGaleria;
 import com.poocode.sanpacho.Fragments.FragmentGuiaHotelera;
 import com.poocode.sanpacho.Fragments.FragmentIndex;
 import com.poocode.sanpacho.Fragments.FragmentLugares;
+import com.poocode.sanpacho.MapsRecorrido;
 import com.poocode.sanpacho.R;
 
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
@@ -32,11 +36,11 @@ public class Accounts extends MaterialNavigationDrawer implements MaterialAccoun
 
         // create sections
         this.addSection(newSection("Calendario",R.drawable.ic_event_note_black_48dp, new FragmentCalendarView()));
-        this.addSection(newSection("Galeía de imágenes",R.drawable.ic_photo_library_black_48dp, new FragmentIndex()));
+        this.addSection(newSection("Galeía de imágenes",R.drawable.ic_photo_library_black_48dp, new FragmentGaleria()));
         this.addSection(newSection("Lugares", R.drawable.ic_pin_drop_black_48dp, new FragmentLugares()));
-        this.addSection(newSection("El bunde en vivo", R.drawable.ic_live_tv_black_48dp, new FragmentIndex()));
+        this.addSection(newSection("El bunde en vivo", R.drawable.ic_live_tv_black_48dp, new FragmentBundeVivo()));
         this.addSection(newSection("Hoteles y restaurantes", R.drawable.ic_domain_black_48dp, new FragmentGuiaHotelera()));
-        this.addSection(newSection("Consulta ruta de recorrido", R.drawable.ic_map_black_48dp, new FragmentIndex()));
+        this.addSection(newSection("Consulta ruta de recorrido", R.drawable.ic_map_black_48dp, new Intent(this, MapsRecorrido.class)));
         this.addSection(newSection("Ver donde esta el bunde", R.drawable.ic_surround_sound_black_48dp, new FragmentIndex()));
         this.addSection(newSection("Notícias", R.drawable.ic_forum_black_24dp, new FragmentIndex()));
         this.addSection(newSection("Teléfono de servicios", R.drawable.ic_local_phone_black_24dp, new FragmentEmergencia()));

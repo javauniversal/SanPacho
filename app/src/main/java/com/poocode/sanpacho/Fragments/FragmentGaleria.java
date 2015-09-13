@@ -1,60 +1,59 @@
 package com.poocode.sanpacho.Fragments;
 
-
+import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
+import com.poocode.sanpacho.Adapters.BucketListAdapterGaleria;
+import com.poocode.sanpacho.Adapters.CostomAdapterGaleria;
 import com.poocode.sanpacho.Adapters.CostomAdapterLugar;
+import com.poocode.sanpacho.Entities.ListGaleria;
 import com.poocode.sanpacho.Entities.ListLugares;
 import com.poocode.sanpacho.R;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class FragmentLugares extends BaseVolleyFragment {
+public class FragmentGaleria extends BaseVolleyFragment {
 
-    private ListLugares dataLugares;
     private ListView multiColumnList;
 
-    public FragmentLugares() {
+    public FragmentGaleria() {
         // Required empty public constructor
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) { }
+        if (getArguments() != null) {
+        }
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_lugares, container, false);
         multiColumnList = (ListView) view.findViewById(R.id.card_list);
-
         return view;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-        setupGrid();
+        LoaderViewGaleria();
     }
 
-    private void setupGrid() {
-        String url = String.format("%1$s%2$s", getString(R.string.url_base),"listLugares");
+    private void LoaderViewGaleria(){
+        String url = String.format("%1$s%2$s", getString(R.string.url_base),"galeria");
         StringRequest jsonRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>(){
                     @Override
@@ -83,10 +82,10 @@ public class FragmentLugares extends BaseVolleyFragment {
         if (json != null && json.length() > 0) {
             try {
                 Gson gson = new Gson();
-                dataLugares = gson.fromJson(json, ListLugares.class);
+                ListGaleria dataLugares = gson.fromJson(json, ListGaleria.class);
 
-                CostomAdapterLugar adapter = new CostomAdapterLugar(getActivity(), dataLugares);
-                adapter.enableAutoMeasure(250);
+                CostomAdapterGaleria adapter = new CostomAdapterGaleria(getActivity(), dataLugares);
+                adapter.enableAutoMeasure(280);
                 multiColumnList.setAdapter(adapter);
 
             }catch (IllegalStateException ex) {

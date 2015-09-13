@@ -28,6 +28,16 @@ public class Lugares {
     @SerializedName("estado")
     private int estado;
 
+    private static Lugares staticLigat;
+
+    public static Lugares getStaticLigat() {
+        return staticLigat;
+    }
+
+    public static void setStaticLigat(Lugares staticLigat) {
+        Lugares.staticLigat = staticLigat;
+    }
+
     public int getIdlugares() {
         return idlugares;
     }

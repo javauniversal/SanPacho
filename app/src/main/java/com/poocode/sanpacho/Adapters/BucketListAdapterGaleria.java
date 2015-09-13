@@ -9,23 +9,22 @@ import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-
-import com.poocode.sanpacho.Entities.Lugares;
+import com.poocode.sanpacho.Entities.Galeria;
 import com.poocode.sanpacho.R;
 
 import java.util.List;
 
-public abstract class BucketListAdapterLugares<T> extends BaseAdapter {
+public abstract class BucketListAdapterGaleria <T> extends BaseAdapter {
 
-    protected List<Lugares> elements;
+    protected List<Galeria> elements;
     protected Activity ctx;
     protected Integer bucketSize;
 
-    public BucketListAdapterLugares(Activity ctx, List<Lugares> elements) {
+    public BucketListAdapterGaleria(Activity ctx, List<Galeria> elements) {
         this(ctx, elements, 1);
     }
 
-    public BucketListAdapterLugares(Activity ctx, List<Lugares> elements, Integer bucketSize) {
+    public BucketListAdapterGaleria(Activity ctx, List<Galeria> elements, Integer bucketSize) {
         this.elements = elements;
         this.ctx = ctx;
         this.bucketSize = bucketSize;
@@ -33,13 +32,13 @@ public abstract class BucketListAdapterLugares<T> extends BaseAdapter {
 
     public void enableAutoMeasure(float minBucketElementWidthDip) {
         float screenWidth = getScreenWidthInDip();
-
         if (minBucketElementWidthDip >= screenWidth) {
             bucketSize = 1;
         } else {
             bucketSize = (int) (screenWidth / minBucketElementWidthDip);
         }
     }
+
     @Override
     public int getCount() {
         return (elements.size() + bucketSize - 1) / bucketSize;
@@ -90,10 +89,7 @@ public abstract class BucketListAdapterLugares<T> extends BaseAdapter {
     }
 }
 
-class ViewHolder {
-
+class ViewHolder2 {
     private static FrameLayout card;
-
-    ViewHolder(View row) {
-    }
+    ViewHolder2(View row){}
 }
