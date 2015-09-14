@@ -36,7 +36,7 @@ public class Accounts extends MaterialNavigationDrawer implements MaterialAccoun
 
         // create sections
         this.addSection(newSection("Calendario",R.drawable.ic_event_note_black_48dp, new FragmentCalendarView()));
-        this.addSection(newSection("Galeía de imágenes",R.drawable.ic_photo_library_black_48dp, new FragmentGaleria()));
+        this.addSection(newSection("Galería de imágenes",R.drawable.ic_photo_library_black_48dp, new FragmentGaleria()));
         this.addSection(newSection("Lugares", R.drawable.ic_pin_drop_black_48dp, new FragmentLugares()));
         this.addSection(newSection("El bunde en vivo", R.drawable.ic_live_tv_black_48dp, new FragmentBundeVivo()));
         this.addSection(newSection("Hoteles y restaurantes", R.drawable.ic_domain_black_48dp, new FragmentGuiaHotelera()));
