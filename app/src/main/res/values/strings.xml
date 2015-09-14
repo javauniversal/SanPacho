@@ -8,7 +8,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-    <string name="url_base">http://192.168.1.51/admin_san_pacho/services/</string>
+    <string name="url_base">http://appgestor.com/admin_san_pacho/services/</string>
     <string name="title_activity_act_des_hot_res">San Pacho</string>
 
     <string name="Descripcion">Nombre:</string>
